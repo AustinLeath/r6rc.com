@@ -1,0 +1,424 @@
+<!DOCTYPE HTML>
+  <html>
+   <head>
+    <title>R6RC</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <link rel="shortcut icon" href="images/favicon.ico" />
+    <!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+    <!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-UA-111374271-4"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'UA-111374271-4');
+    </script>
+    <style>
+        #titlename {
+            font-size: 75%;
+            vertical-align: middle;
+            padding-left: 5px;
+        }
+        #title-bar {
+            -webkit-app-region: drag;
+            height: 25px;
+            text-align: center;
+            line-height: 25px;
+            vertical-align: middle;
+            background-color: rgba(39, 40, 51, 1);
+            padding: none;
+            margin: 0px;
+            position: fixed;
+            width: 100%;
+            z-index: 100;
+        }
+        #title {
+            position: fixed;
+            top: 0px;
+            left: 6px;
+            color: white;
+        }
+        #title-bar-btns {
+            -webkit-app-region: no-drag;
+            position: fixed;
+            top: 0px;
+            right: 0px;
+        }
+        .titlebarbuttons {
+          color: white;
+        }
+        #min-btn {
+            background-color: transparent;
+            border-style: none;
+            outline-style: none;
+            height: 25px;
+        }
+        #min-btn:hover {
+            background-color: grey;
+            height: 25px;
+        }
+        #max-btn {
+            background-color: transparent;
+            border-style: none;
+            outline-style: none;
+            height: 23px;
+        }
+        #max-btn:hover {
+            background-color: grey;
+            height: 23px;
+            top: 3px;
+        }
+        #close-btn {
+            background-color: transparent;
+            border-style: none;
+            outline-style: none;
+            height: 25px;
+        }
+        #close-btn:hover {
+            background-color: red;
+            height: 25px;
+        }
+        .noselect {
+            -webkit-touch-callout: none;
+            -webkit-user-select: none;
+            -khtml-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+        .disable {
+            display: none;
+        }
+        #presetbtn {
+            position: fixed;
+            top: 20%;
+            left: 12%;
+        }
+        #custombtn {
+            position: fixed;
+            top: 20%;
+            right: 13%;
+        }
+        #preset {
+            position: fixed;
+            width: 75%;
+            left: 12%;
+            top: 28%;
+        }
+        #custom {
+            position: fixed;
+            width: 75%;
+            left: 12%;
+            top: 28%;
+        }
+				.versionnum {
+					position: fixed;
+					top:75%;
+					width:100%;
+					text-align: center;
+					text-decoration: none;
+				}
+        #prompts {
+          position: fixed;
+          top: 18%;
+          width: 100%;
+          text-align: center;
+          text-decoration: none;
+        }
+        #donatebutton {
+          position: fixed;
+          bottom: 0%;
+          left: 3%;
+        }
+        #r6tabclick {
+          position: fixed;
+          bottom: 10px;
+          left: 25px;
+        }
+        #discordclick {
+          position: fixed;
+          top: 35px;
+          right: 26.5px;
+        }
+        #discord {
+          width:25px;
+          height:25px;
+        }
+        #r6tab {
+          width:70px;
+          height:40px;
+        }
+        #twitterclick {
+          position: fixed;
+          bottom: 10px;
+          right: 25px;
+        }
+        #twitterimg {
+          width: 35px;
+          height: 35px;
+        }
+        #exitfullscreenmessage {
+          position: fixed;
+          top: 30px;
+          right: 5%;
+          display: none;
+        }
+        #r6rcpage {
+          display: block;
+        }
+        #changelogpage {
+          display: none;
+        }
+        #playersearchpage {
+          display: none;
+        }
+        #contributorspage {
+          display: none;
+        }
+        .pagechangebtn {
+          margin: auto;
+          display: block;
+        }
+        .pagechangebtntlc {
+          position: fixed;
+          top: 35px;
+          left: 10px;
+        }
+        .changelog {
+          width: 50%;
+          text-align: left;
+          margin: auto;
+          display: block;
+          padding-top: 20px;
+        }
+        #playersearch {
+          width: 75%;
+          padding-top: 10%;
+          margin: auto;
+          display: block;
+        }
+    </style>
+</head>
+<body class="noselect" id="background">
+    <div id="page-wrapper">
+      <section id="content">
+        <a id="discordclick" href="https://discord.gg/NaAmbbb"><img id="discord" src="images/discord.png" alt=""/></a>
+        <div id="r6rcpage">
+          <div id="prompts">
+            <h5 id="cycletxt-1">Welcome to the most minimalistic rank calculator for Rainbow Six: Siege</h5>
+            <h5 id="cycletxt-2">Use the buttons on either side of the screen<br>to switch between solving for a preset rank or a custom rank</h5>
+            <h5 id="cycletxt-3">This application is under heavy development and its features<br>are subject to immediate change</h5>
+            <h5 id="cycletxt-4"><a id="timeran"></a></h5>
+            <h5 id="cycletxt-5">Coming soon, R6RC for Mac!</h5>
+          </div>
+          <button class="button small btnalign" id="presetbtn" type="button" onclick="preset();customreset();disable();" disabled>Preset</button>
+          <button class="pagechangebtn button small btnalign" type="button" onclick="changelogpage();">View Changelog</button>
+          <!--<button class="pagechangebtntlc button small btnalign" type="button" onclick="playersearchpage();">Player Search</button>-->
+          <button class="button small btnalign" id="custombtn" type="button" onclick="custom();presetreset();disable1();">Custom</button>
+          <a id="r6tabclick" href="https://r6tab.com"><img id="r6tab" src="images/r6tablogo.png" alt=""/></a>
+          <a id="twitterclick" href="https://twitter.com/R6RankCalc"><img id="twitterimg" src="images/twitter.png" alt=""/></a>
+          <!--Divider-->
+          <form id="preset" action="">
+              <h1 style="text-align: center;">Rainbow Six Siege | Rank Calculator (Preset Rank Goal)</h1>
+              <div class="row uniform 50%">
+                  <div class="6u 12u$(xsmall)">
+                      <input type="number" name="mmr" id="mmr" min="1300" max="10000" value="" placeholder="Enter your current MMR" />
+                  </div>
+                  <div class="6u$ 12u$(xsmall)">
+                      <input type="number" name="elo" id="elo" min="1" max="500" value="" placeholder="Enter your current ELO per match" />
+                  </div>
+                  <div class="12u$">
+                      <div class="select-wrapper">
+                        <select name="goal" id="goal">
+                          <option value="">Select a Rank</option>
+                            <optgroup label="Copper">
+                               <option value="1300">Copper IV</option>
+                               <option value="1400">Copper III</option>
+                               <option value="1500">Copper II</option>
+                               <option value="1600">Copper I</option>
+                             </optgroup>
+                             <optgroup label="Bronze">
+                               <option value="1700">Bronze IV</option>
+                               <option value="1800">Bronze III</option>
+                               <option value="1900">Bronze II</option>
+                               <option value="2000">Bronze I</option>
+                             </optgroup>
+                             <optgroup label="Silver">
+                               <option value="2100">Silver IV</option>
+                               <option value="2200">Silver III</option>
+                               <option value="2300">Silver II</option>
+                               <option value="2400">Silver I</option>
+                             </optgroup>
+                             <optgroup label="Gold">
+                               <option value="2500">Gold IV</option>
+                               <option value="2700">Gold III</option>
+                               <option value="2900">Gold II</option>
+                               <option value="3100">Gold I</option>
+                             </optgroup>
+                             <optgroup label="Platinum">
+                               <option value="3300">Platinum III</option>
+                               <option value="3700">Platinum II</option>
+                               <option value="4100">Platinum I</option>
+                             </optgroup>
+                            <option value="4500">Diamond</option>
+                          </select>
+                      </div>
+                  </div>
+                  <div class="12u$">
+                      <ul class="actions">
+                          <li>
+                              <input type="submit" value="Calculate" class="special" onclick="enable();checkmmrfill();checkelofill();checkgoalfill();winorlose();matchcount();dontwinorlose();">
+                          </li>
+                          <li>
+                              <input type="reset" value="Reset" class="special" onclick="disable();">
+                          </li>
+                          <li id="display">
+                              <a id="winorlose"></a>
+                              <a id="result"></a>
+                              <a id="anydiv"></a>
+                              <a id="matchcount"></a>
+                          </li>
+                          <li id="errordialogue">
+                            <a id="mmrerrormessage"></a>
+                            <a id="eloerrormessage"></a>
+                            <a id="goalerrormessage"></a>
+                          </li>
+                      </ul>
+                  </div>
+              </div>
+          </form>
+
+          <form class="disable" id="custom" action="">
+              <h1 style="text-align: center;">Rainbow Six Siege | Rank Calculator (Custom Rank Goal)</h1>
+              <div class="row uniform 50%">
+                  <div class="6u 12u$(xsmall)">
+                      <input id="mmr1" name="mmr1" type="number" min="1300" max="10000" placeholder="Enter your current MMR" value="" />
+                  </div>
+                  <div class="6u$ 12u$(xsmall)">
+                      <input id="elo1" name="elo1" type="number" min="1" max="500" placeholder="Enter your current ELO per match" value="" />
+                  </div>
+                  <div class="12u$">
+                      <div class="12u$">
+                          <input id="goal1" name="goal1" type="number" min="1300" max="10000" placeholder="Enter a custom MMR goal (between 1,300 MMR and 10,000 MMR)" value="" />
+                      </div>
+                  </div>
+                  <div class="12u$">
+                      <ul class="actions">
+                          <li>
+                              <input type="submit" value="Calculate" class="special" onclick="enable1();checkmmrfill1();checkelofill1();checkgoalfill1();winorlose1();matchcount1();dontwinorlose1();">
+                          </li>
+                          <li>
+                              <input type="reset" value="Reset" class="special" onclick="disable1();">
+                          </li>
+                          <li id="display1">
+                              <a id="winorlose1"></a>
+                              <a id="result1"></a>
+                              <a id="anydiv1"></a>
+                              <a id="matchcount1"></a>
+                          </li>
+                          <li id="errordialogue1">
+                            <a id="mmrerrormessage1"></a>
+                            <a id="eloerrormessage1"></a>
+                            <a id="goalerrormessage1"></a>
+                          </li>
+                      </ul>
+                  </div>
+              </div>
+          </form>
+        </div>
+      <div id="changelogpage">
+        <button class="pagechangebtn button small btnalign" type="button" onclick="r6rcpage();">Return to R6RC</button>
+        <button class="pagechangebtntlc button small btnalign" type="button" onclick="contributorspage();">Contributors</button>
+        <div class="changelog">
+          <table>
+            <tbody>
+              <tr>
+                <td>R6RC | R6 Rank Calculator</td>
+                <td><a id="releasesclick" class="button icon fa-download" href="https://github.com/AustinLeath/r6rc/releases/latest/" target="_blank">Releases</a></td>
+              </tr>
+            </tbody>
+          </table>
+        <h1><strong>R6RC | Changelog</strong></h2>
+        <h1>VERSION 0.4.3 CHANGE NOTES</h1>
+          <ul>
+           <strong>CHANGES</strong>
+           <li><b>Added</b> a contributors page!</li>
+           <li><b>Added</b> fullscreen mode! Press F11 to test it out</li>
+           <li><b>Added</b> a dialogue that lets the user know how to exit fullscreen mode</li>
+           <li><b>Fixed</b> those annoying yellow borders around all of the buttons</li>
+           <li><b>Improved</b> R6RC startup time</li>
+          </ul>
+          <ul>
+           <strong>COMING SOON</strong>
+           <li>Visible in-app menu for R6RC</li>
+           <li>Windows Taskbar Jump & Task list for R6RC</li>
+           <li>R6RC Discord Bot</li>
+           <li>R6RC for Mac</li>
+          </ul>
+        </div>
+      </div>
+
+      <div id="playersearchpage">
+        <div id="playersearch">
+          <input type="text" onkeyup="showHint(this.value)" placeholder="Enter a username">
+          <span id="txtHint">
+        </div>
+      </div>
+
+      <div id="contributorspage">
+        <button class="pagechangebtn button small btnalign" type="button" onclick="r6rcpage();">Return to R6RC</button>
+        <div class="changelog">
+          <table>
+            <tbody>
+              <tr>
+                <td>Austin Leath</td>
+                <td><a id="githubprofile_al" class="button" href="https://github.com/AustinLeath/" target="_blank">GitHub Profile</a></td>
+              </tr>
+              <tr>
+                <td>William Hatcher</td>
+                <td><a id="githubprofile_wh" class="button" href="https://github.com/williamhatcher/" target="_blank">GitHub Profile</a></td>
+              </tr>
+            </tbody>
+          </table>
+         <h1>There are no other contributors! To contribute you must add to the repository on GitHub.</h1>
+        </div>
+      </div>
+    </div>
+
+      </section>
+			</div>
+       <script src="assets/js/jquery.min.js"></script>
+       <script src="assets/js/jquery.min.js"></script>
+       <script src="assets/js/cycletxt.js"></script>
+       <script src="assets/js/switchmethod.js"></script>
+       <script src="assets/js/primaryfunctions.js"></script>
+       <!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+       <script src="assets/js/main.js"></script>
+       <script src="assets/js/methodpreset.js"></script>
+       <script src="assets/js/methodcustom.js"></script>
+       <script src="assets/react/react.js"></script>
+       <script src="assets/react/react-dom.js"></script>
+       <script src="assets/react/timeran.js"></script>
+       <script>
+       function showHint(str) {
+           if (str.length == 0) {
+               document.getElementById("txtHint").innerHTML = "";
+               return;
+           } else {
+               var xmlhttp = new XMLHttpRequest();
+               xmlhttp.onreadystatechange = function() {
+                   if (this.readyState == 4 && this.status == 200) {
+                       document.getElementById("txtHint").innerHTML = this.responseText;
+                   }
+               };
+               xmlhttp.open("GET", "https://www.r6rc.com/assets/php/gethint.php?q=" + str, true);
+               xmlhttp.send();
+           }
+       }
+       </script>
+    </body>
+</html>
