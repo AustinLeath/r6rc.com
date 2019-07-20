@@ -19,9 +19,8 @@ a {
   -webkit-transition: all .35s;
   transition: all .35s;
 }
-
 a:hover, a:focus {
-  color: red;
+  text-decoration: underline;;
 }
 
 hr {
@@ -71,14 +70,14 @@ section h2 {
 }
 
 #mainNav .navbar-brand {
-  color: #0d95e8;
+  color: #383050;
   font-family: 'Catamaran', 'Helvetica', 'Arial', 'sans-serif';
   font-weight: 200;
   letter-spacing: 1px;
 }
 
 #mainNav .navbar-brand:hover, #mainNav .navbar-brand:focus {
-  color: black;
+  text-decoration: underline;
 }
 
 #mainNav .navbar-toggler {
@@ -95,7 +94,7 @@ section h2 {
 }
 
 #mainNav .navbar-nav > li > a.active {
-  color: red !important;
+  text-decoration: underline; !important;
   background-color: transparent;
 }
 
@@ -110,7 +109,7 @@ section h2 {
 
 #mainNav .navbar-nav > li > a:hover,
 #mainNav .navbar-nav > li > a:focus:hover {
-  color: red;
+  text-decoration: underline;;
 }
 
 @media (min-width: 992px) {
@@ -119,10 +118,10 @@ section h2 {
     background-color: transparent;
   }
   #mainNav .navbar-brand {
-    color: fade(white, 70%);
+    color: rgba(255, 255, 255, 0.7);
   }
   #mainNav .navbar-brand:hover, #mainNav .navbar-brand:focus {
-    color: red;
+    text-decoration: underline;
   }
   #mainNav .navbar-nav > li > a,
   #mainNav .navbar-nav > li > a:focus {
@@ -130,7 +129,7 @@ section h2 {
   }
   #mainNav .navbar-nav > li > a:hover,
   #mainNav .navbar-nav > li > a:focus:hover {
-    color: red;
+    text-decoration: underline;;
   }
   #mainNav.navbar-shrink {
     border-color: rgba(34, 34, 34, 0.1);
@@ -140,7 +139,7 @@ section h2 {
     color: #222222;
   }
   #mainNav.navbar-shrink .navbar-brand:hover, #mainNav.navbar-shrink .navbar-brand:focus {
-    color: red;
+    text-decoration: underline;;
   }
   #mainNav.navbar-shrink .navbar-nav > li > a,
   #mainNav.navbar-shrink .navbar-nav > li > a:focus {
@@ -148,7 +147,7 @@ section h2 {
   }
   #mainNav.navbar-shrink .navbar-nav > li > a:hover,
   #mainNav.navbar-shrink .navbar-nav > li > a:focus:hover {
-    color: red;
+    text-decoration: underline;;
   }
 }
 
@@ -341,10 +340,10 @@ section.contact ul.list-social li a {
   font-size: 40px;
   line-height: 80px;
   display: block;
+  color: rgba(0, 0, 0, 0);
   width: 80px;
   height: 80px;
-  color: white;
-  border-radius: 100%;
+  border-radius: 1px;
 }
 
 section.contact ul.list-social li.social-twitter a {
@@ -443,4 +442,8 @@ footer ul li a:hover, footer ul li a:focus, footer ul li a:active, footer ul li 
 
 .basicgray {
   color: #1c1d26;
+}
+.basicgray:hover {
+  border-bottom: solid;
+  border-radius: 1px;
 }
