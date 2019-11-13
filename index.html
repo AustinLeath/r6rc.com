@@ -50,11 +50,12 @@
 
 					<div class="primary-content">
 						<h1 style="text-align: center" class="page-title">R6RC | Rainbow Six Rank Calculator</h1>
+            <h6 style="text-align: center"><i>Now Updated For The Newest Season!</i></h6>
             <form id="preset" onsubmit="return false">
               <button class="submit button-primary full-width" id="custombtn" type="button" onclick="custom();presetreset();disable1();">Go To Custom</button>
 	  					   <fieldset>
 	                     <div class="form-field">
-	  						       <input name="mmr" type="number" id="mmr" min="1300" max="10000" class="full-width" placeholder="Enter your current MMR" value="" required=true>
+	  						       <input name="mmr" type="number" id="mmr" min="1100" max="10000" class="full-width" placeholder="Enter your current MMR" value="" required=true>
 	                     </div>
 
 	                     <div class="form-field">
@@ -63,28 +64,31 @@
 
                        <div class="ss-custom-select">
                           <select class="full-width" name="goal" id="goal" required=true>
-                            <option value="">Select a Rank Goal</option>
-                                 <option value="1300">Copper IV</option>
-                                 <option value="1400">Copper III</option>
-                                 <option value="1500">Copper II</option>
-                                 <option value="1600">Copper I</option>
-                                 <option value="1700">Bronze IV</option>
-                                 <option value="1800">Bronze III</option>
-                                 <option value="1900">Bronze II</option>
-                                 <option value="2000">Bronze I</option>
-                                 <option value="2100">Silver IV</option>
-                                 <option value="2200">Silver III</option>
-                                 <option value="2300">Silver II</option>
-                                 <option value="2400">Silver I</option>
-                                 <option value="2500">Gold IV</option>
-                                 <option value="2700">Gold III</option>
-                                 <option value="2900">Gold II</option>
-                                 <option value="3100">Gold I</option>
-                                 <option value="3300">Platinum III</option>
-                                 <option value="3700">Platinum II</option>
-                                 <option value="4100">Platinum I</option>
-                                 <option value="4500">Diamond</option>
-                                 <option value="5000">Top Players</option>
+                            <option value="">Select a desired rank</option>
+                            <option value="1100">COPPER V</option>
+                            <option value="1200">COPPER IV</option>
+                            <option value="1300">COPPER III</option>
+                            <option value="1400">COPPER II</option>
+                            <option value="1500">COPPER I</option>
+                            <option value="1600">BRONZE V</option>
+                            <option value="1700">BRONZE IV</option>
+                            <option value="1800">BRONZE III</option>
+                            <option value="1900">BRONZE II</option>
+                            <option value="2000">BRONZE I</option>
+                            <option value="2100">SILVER V</option>
+                            <option value="2200">SILVER IV</option>
+                            <option value="2300">SILVER III</option>
+                            <option value="2400">SILVER II</option>
+                            <option value="2500">SILVER I</option>
+                            <option value="2600">GOLD III</option>
+                            <option value="2800">GOLD II</option>
+                            <option value="3000">GOLD I</option>
+                            <option value="3200">PLATINUM III</option>
+                            <option value="3600">PLATINUM II</option>
+                            <option value="4000">PLATINUM I</option>
+                            <option value="4400">DIAMOND</option>
+                            <option value="5000">CHAMPIONS</option>
+                            </optgroup>
                             </select>
        			        	 </div>
 
@@ -108,7 +112,7 @@
                <button class="submit button-primary full-width" id="presetbtn" type="button" onclick="preset();customreset();disable();" disabled>Go To Preset</button>
                  <fieldset>
                        <div class="form-field">
-                       <input name="mmr1" type="number" id="mmr1" min="1300" max="10000" class="full-width" placeholder="Enter your current MMR" value="" required=true>
+                       <input name="mmr1" type="number" id="mmr1" min="1100" max="10000" class="full-width" placeholder="Enter your current MMR" value="" required=true>
                        </div>
 
                        <div class="form-field">
@@ -116,7 +120,7 @@
                        </div>
 
                        <div class="form-field">
-                       <input name="goal1" type="number" id="goal1" min="1300" max="10000" class="full-width" placeholder="Enter a custom MMR goal" value="" required=true>
+                       <input name="goal1" type="number" id="goal1" min="1100" max="10000" class="full-width" placeholder="Enter a custom MMR goal" value="" required=true>
                        </div>
 
                       <button type="submit" class="submit button-primary full-width-on-mobile" onclick="enable1();checkmmrfill1();checkelofill1();checkgoalfill1();winorlose1();matchcount1();dontwinorlose1();">Submit</button>

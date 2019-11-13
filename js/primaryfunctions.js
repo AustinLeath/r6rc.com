@@ -79,7 +79,7 @@ function checkKeyPressed(e) {
 function checkmmrfill() {
     var finalmessage;
     x = document.getElementById("mmr").value;
-    if (x < 1300) {
+    if (x < 1100) {
       document.getElementById("display").style.display = "none";
       document.getElementById("mmrerrormessage").style.display = "";
       finalmessage = "Enter player MMR";
@@ -127,7 +127,7 @@ function checkgoalfill() {
 function checkmmrfill1() {
     var finalmessage;
     x = document.getElementById("mmr1").value;
-    if (x < 1300) {
+    if (x < 1100) {
       document.getElementById("display1").style.display = "none";
       document.getElementById("mmrerrormessage1").style.display = "";
       finalmessage = "Enter player MMR";
@@ -161,7 +161,7 @@ function checkelofill1() {
 function checkgoalfill1() {
     var finalmessage;
     x = document.getElementById("goal1").value;
-    if (x < 1300) {
+    if (x < 1100) {
       document.getElementById("display1").style.display = "none";
       document.getElementById("goalerrormessage1").style.display = "";
       finalmessage = "Select a rank from the dialogue above.";
