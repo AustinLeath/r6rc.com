@@ -157,5 +157,13 @@
    <script src="js/methodpreset.js"></script>
    <script src="js/methodcustom.js"></script>
    <script src="js/primaryfunctions.js"></script>
+   <script type="text/javascript">
+     var h5 = $('h5[id^="cycletxt-"]').hide(),
+       i = 0;
+     (function cycletxt() {
+       h5.eq(i).fadeIn(1500).delay(6500).fadeOut(1500, cycletxt);
+       i = ++i % h5.length;
+     })();
+   </script>
   </body>
 </html>
