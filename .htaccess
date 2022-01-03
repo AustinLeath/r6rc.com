@@ -11,6 +11,8 @@ RewriteRule (.*) http://r6rc.com/$1 [R=301,L]
 
 Options -Indexes
 
+RedirectMatch 404 ^/\.git/.*$
+
 <Files .htaccess>
 Order Allow,Deny
 Deny from all
