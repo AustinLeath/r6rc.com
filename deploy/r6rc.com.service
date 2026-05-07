@@ -5,15 +5,16 @@ Wants=network.target
 
 [Service]
 Type=simple
-User=www-data
-Group=www-data
-WorkingDirectory=/opt/r6rc.com
+User=root
+Group=root
+WorkingDirectory=/var/www/r6rc.com/
 Environment=NODE_ENV=production
+Environment=PATH=/root/.nvm/versions/node/v22.20.0/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 
 # Uncomment if you want to build on every service start:
-# ExecStartPre=/usr/bin/npm run build
+# ExecStartPre=/root/.nvm/versions/node/v22.20.0/bin/node /var/www/r6rc.com/node_modules/vite/bin/vite.js build
 
-ExecStart=/usr/bin/npm run preview -- --host 0.0.0.0 --port 4173
+ExecStart=/root/.nvm/versions/node/v22.20.0/bin/node /var/www/r6rc.com/node_modules/vite/bin/vite.js preview --host 0.0.0.0 --port 4173
 Restart=always
 RestartSec=5
 KillSignal=SIGINT

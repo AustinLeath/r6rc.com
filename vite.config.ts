@@ -8,6 +8,9 @@ import tailwindcss from '@tailwindcss/vite'
 
 const config = defineConfig({
   resolve: { tsconfigPaths: true },
+  preview: {
+    allowedHosts: ['r6rc.com', 'www.r6rc.com'],
+  },
   plugins: [
     devtools(),
     tailwindcss(),
