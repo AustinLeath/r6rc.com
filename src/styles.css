@@ -42,6 +42,11 @@ body {
   filter: saturate(0.66) blur(0.28px);
   mix-blend-mode: screen;
   opacity: 0.16;
+  transition: opacity 420ms ease;
+}
+
+.operator-bg-layer.is-fading {
+  opacity: 0 !important;
 }
 
 .operator-bg-layer-1 {
@@ -78,8 +83,10 @@ a {
 .page-shell {
   min-height: 100vh;
   padding: 2rem 1rem;
-  display: grid;
-  place-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
   position: relative;
 }
 
@@ -100,6 +107,14 @@ a {
 .hero {
   text-align: center;
   margin-bottom: 1.25rem;
+}
+
+.hero-logo {
+  width: clamp(4.5rem, 11vw, 6.4rem);
+  height: auto;
+  margin: 0 auto 0.55rem;
+  display: block;
+  filter: drop-shadow(0 0.45rem 1.2rem rgba(0, 0, 0, 0.35));
 }
 
 .hero h1 {
@@ -243,6 +258,84 @@ a {
   text-align: center;
   color: #e2e7ec;
   animation: fade-in 300ms ease-out;
+}
+
+.share-row {
+  margin-top: 0.65rem;
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  flex-wrap: wrap;
+}
+
+.share-feedback {
+  font-size: 0.9rem;
+  color: #d8f6e8;
+}
+
+.seo-card {
+  width: min(44rem, 100%);
+  border-radius: 1.2rem;
+  border: 1px solid rgba(255, 210, 158, 0.2);
+  background: linear-gradient(170deg, rgba(18, 24, 35, 0.84), rgba(12, 16, 25, 0.84));
+  box-shadow: 0 1.2rem 3rem rgba(0, 0, 0, 0.28);
+  padding: 1rem 1.2rem;
+  position: relative;
+  z-index: 1;
+}
+
+.seo-content {
+  color: #dbe2ea;
+}
+
+.seo-content h2,
+.seo-content h3 {
+  margin: 0.85rem 0 0.35rem;
+  line-height: 1.25;
+}
+
+.seo-content h2 {
+  font-size: 1.34rem;
+}
+
+.seo-content h3 {
+  font-size: 1.05rem;
+}
+
+.seo-content p {
+  margin: 0.28rem 0;
+  line-height: 1.55;
+}
+
+.seo-content code {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.9rem;
+  color: #ffe5bf;
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 0.3rem;
+  padding: 0.1rem 0.32rem;
+}
+
+.faq-list {
+  margin-top: 0.5rem;
+  display: grid;
+  gap: 0.5rem;
+}
+
+.faq-list details {
+  border: 1px solid rgba(255, 214, 165, 0.24);
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 0.65rem;
+  padding: 0.55rem 0.7rem;
+}
+
+.faq-list summary {
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.faq-list p {
+  margin-top: 0.4rem;
 }
 
 @media (max-width: 640px) {

@@ -1,20 +1,50 @@
-
-<!doctype html>
+﻿<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>R6RC</title>
+    <title>R6RC Rank Calculator | Rainbow Six Siege MMR & Match Estimator</title>
     <meta
       name="description"
-      content="Welcome to R6RC, the most minimalistic rank calculator for Rainbow Six: Siege"
+      content="R6RC is a free Rainbow Six Siege rank calculator. Estimate wins or losses needed to hit your target rank with preset tiers or a custom MMR goal."
     />
     <meta name="author" content="Austin Leath" />
     <meta
       name="keywords"
-      content="r6rc, rainbow, six, siege, rank, mmr, elo, r6tab, r6db, tabwire, r6tracker, goal, solve, calculator, copper, bronze, silver, gold, platinum, diamond, champions"
+      content="rainbow six siege rank calculator, r6 rank calculator, r6 mmr calculator, siege elo calculator, ranked match estimator, r6rc"
     />
+    <meta name="robots" content="index,follow,max-image-preview:large" />
+    <meta name="theme-color" content="#172030" />
+    <link rel="canonical" href="https://r6rc.com/" />
+
+    <meta property="og:site_name" content="R6RC" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://r6rc.com/" />
+    <meta property="og:title" content="R6RC Rank Calculator | Rainbow Six Siege MMR & Match Estimator" />
+    <meta
+      property="og:description"
+      content="Calculate how many wins or losses you need for your target Rainbow Six Siege rank."
+    />
+    <meta property="og:image" content="https://r6rc.com/android-chrome-512x512.png" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="R6RC Rank Calculator" />
+    <meta
+      name="twitter:description"
+      content="Free Rainbow Six Siege MMR and rank goal calculator with shareable results."
+    />
+    <meta name="twitter:image" content="https://r6rc.com/android-chrome-512x512.png" />
+
+    <!-- Replace these with real verification tokens -->
+    <meta name="google-site-verification" content="REPLACE_WITH_GOOGLE_SEARCH_CONSOLE_TOKEN" />
+    <meta name="msvalidate.01" content="REPLACE_WITH_BING_WEBMASTER_TOKEN" />
+
     <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -22,14 +52,20 @@
       rel="stylesheet"
     />
 
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-UA-111374271-4"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-REPLACE_WITH_GA4_ID"></script>
     <script>
+      const GA4_MEASUREMENT_ID = 'G-REPLACE_WITH_GA4_ID'
+      const UNIVERSAL_ANALYTICS_ID = 'UA-111374271-4'
+
       window.dataLayer = window.dataLayer || []
       function gtag() {
         dataLayer.push(arguments)
       }
       gtag('js', new Date())
-      gtag('config', 'UA-111374271-4')
+      gtag('config', UNIVERSAL_ANALYTICS_ID)
+      if (GA4_MEASUREMENT_ID !== 'G-REPLACE_WITH_GA4_ID') {
+        gtag('config', GA4_MEASUREMENT_ID)
+      }
     </script>
 
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
@@ -38,6 +74,89 @@
         google_ad_client: 'ca-pub-6867572836372497',
         enable_page_level_ads: true,
       })
+    </script>
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "R6RC",
+        "url": "https://r6rc.com/",
+        "description": "Free Rainbow Six Siege rank and MMR calculator."
+      }
+    </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "R6RC Rank Calculator",
+        "url": "https://r6rc.com/",
+        "applicationCategory": "GameApplication",
+        "operatingSystem": "Any",
+        "browserRequirements": "Requires JavaScript",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        },
+        "description": "Rainbow Six Siege rank calculator that estimates how many matches you need to reach your desired MMR rank."
+      }
+    </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "How does the R6RC rank calculator work?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "R6RC compares your current MMR to your target MMR and divides the difference by your average ELO change per match."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What formula is used for match estimates?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "R6RC uses abs(ceil((goal - current MMR) / ELO per match)) to estimate required matches."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can I calculate with custom MMR goals?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. Use Custom mode to enter any target MMR between 1100 and 10000."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Why do results include plus/minus one match?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "ELO gain and loss can vary slightly by match, so the estimate includes a small margin."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can I share my calculation?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. Submit your values and use the copy share link button to generate a URL with your calculator inputs."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Does R6RC support both rank presets and custom goals?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. Preset mode provides rank tiers, and Custom mode supports any valid MMR target."
+            }
+          }
+        ]
+      }
     </script>
   </head>
   <body>
