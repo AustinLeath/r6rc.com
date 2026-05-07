@@ -1,0 +1,24 @@
+[Unit]
+Description=R6RC TanStack App
+After=network.target
+Wants=network.target
+
+[Service]
+Type=simple
+User=www-data
+Group=www-data
+WorkingDirectory=/opt/r6rc.com
+Environment=NODE_ENV=production
+
+# Uncomment if you want to build on every service start:
+# ExecStartPre=/usr/bin/npm run build
+
+ExecStart=/usr/bin/npm run preview -- --host 0.0.0.0 --port 4173
+Restart=always
+RestartSec=5
+KillSignal=SIGINT
+TimeoutStopSec=20
+NoNewPrivileges=true
+
+[Install]
+WantedBy=multi-user.target

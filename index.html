@@ -1,173 +1,53 @@
-<!DOCTYPE html>
-<!--[if IE 8 ]><html class="no-js oldie ie8" lang="en"> <![endif]-->
-<!--[if IE 9 ]><html class="no-js oldie ie9" lang="en"> <![endif]-->
-<!--[if (gte IE 9)|!(IE)]><!--><html class="no-js" lang="en"> <!--<![endif]-->
-<head>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta charset="utf-8">
-	<title>R6RC</title>
-	<meta name="description" content="Welcome to R6RC, the most minimalistic rank calculator for Rainbow Six: Siege">
-	<meta name="author" content="Austin Leath">
-  <meta name="keywords" content="r6rc, rainbow, six, siege, rank, mmr, elo, r6tab, r6db, tabwire, r6tracker, goal, solve, calculator, copper, bronze, silver, gold, platinum, plat, diamond, top, players">
 
-  <link rel="stylesheet" href="css/base.css">
-  <link rel="stylesheet" href="css/vendor.css">
-  <link rel="stylesheet" href="css/main.css">
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>R6RC</title>
+    <meta
+      name="description"
+      content="Welcome to R6RC, the most minimalistic rank calculator for Rainbow Six: Siege"
+    />
+    <meta name="author" content="Austin Leath" />
+    <meta
+      name="keywords"
+      content="r6rc, rainbow, six, siege, rank, mmr, elo, r6tab, r6db, tabwire, r6tracker, goal, solve, calculator, copper, bronze, silver, gold, platinum, diamond, champions"
+    />
+    <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
 
-	<script src="js/modernizr.js"></script>
-	<script src="js/pace.min.js"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-UA-111374271-4"></script>
+    <script>
+      window.dataLayer = window.dataLayer || []
+      function gtag() {
+        dataLayer.push(arguments)
+      }
+      gtag('js', new Date())
+      gtag('config', 'UA-111374271-4')
+    </script>
 
-	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-	<link rel="icon" href="favicon.ico" type="image/x-icon">
-  <!-- Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-UA-111374271-4"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'UA-111374271-4');
-  </script>
-  <!-- End Google Analytics -->
-  <!-- Google Ads -->
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-  <script>
-       (adsbygoogle = window.adsbygoogle || []).push({
-            google_ad_client: "ca-pub-6867572836372497",
-            enable_page_level_ads: true
-       });
-  </script>
-  <!-- End Google Ads -->
-</head>
-<style>
-  #custom {
-    display: none;
-  }
-</style>
-<body id="top">
-   <!-- content -->
-   <section id="content-wrap" class="blog-single">
-   	<div class="row">
-   		<div class="col-twelve">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+      ;(adsbygoogle = window.adsbygoogle || []).push({
+        google_ad_client: 'ca-pub-6867572836372497',
+        enable_page_level_ads: true,
+      })
+    </script>
+  </head>
+  <body>
+    <div id="app"></div>
+    <script type="module" src="/src/main.tsx"></script>
 
-   			<article class="format-standard">
-
-					<div class="primary-content">
-						<h1 style="text-align: center" class="page-title">R6RC | Rainbow Six Rank Calculator</h1>
-            <h6 style="text-align: center"><i>Now Updated For The Latest Season!</i></h6>
-            <form id="preset" onsubmit="return false">
-              <button class="submit button-primary full-width" id="custombtn" type="button" onclick="custom();presetreset();disable1();">Go To Custom</button>
-	  					   <fieldset>
-	                     <div class="form-field">
-	  						       <input name="mmr" type="number" id="mmr" min="1100" max="10000" class="full-width" placeholder="Enter your current MMR" value="" required=true>
-	                     </div>
-
-	                     <div class="form-field">
-	  						       <input name="elo" type="number" id="elo" min="1" max="500" class="full-width" placeholder="Enter your current ELO per match" value="" required=true>
-	                     </div>
-
-                       <div class="ss-custom-select">
-                          <select class="full-width" name="goal" id="goal" required=true>
-                            <option value="">Select a desired rank</option>
-                            <option value="1100">COPPER V</option>
-                            <option value="1200">COPPER IV</option>
-                            <option value="1300">COPPER III</option>
-                            <option value="1400">COPPER II</option>
-                            <option value="1500">COPPER I</option>
-                            <option value="1600">BRONZE V</option>
-                            <option value="1700">BRONZE IV</option>
-                            <option value="1800">BRONZE III</option>
-                            <option value="1900">BRONZE II</option>
-                            <option value="2000">BRONZE I</option>
-                            <option value="2100">SILVER V</option>
-                            <option value="2200">SILVER IV</option>
-                            <option value="2300">SILVER III</option>
-                            <option value="2400">SILVER II</option>
-                            <option value="2500">SILVER I</option>
-                            <option value="2600">GOLD III</option>
-                            <option value="2800">GOLD II</option>
-                            <option value="3000">GOLD I</option>
-                            <option value="3200">PLATINUM III</option>
-                            <option value="3500">PLATINUM II</option>
-                            <option value="3800">PLATINUM I</option>
-                            <option value="4100">DIAMOND III</option>
-                            <option value="4400">DIAMOND II</option>
-                            <option value="4700">DIAMOND I</option>
-                            <option value="5000">CHAMPIONS</option>
-                            </optgroup>
-                            </select>
-       			        	 </div>
-
-	                     <button type="submit" class="submit button-primary full-width-on-mobile" onclick="enable();checkmmrfill();checkelofill();checkgoalfill();winorlose();matchcount();dontwinorlose();">Submit</button>
-                       <button type="reset" class="submit button-primary full-width-on-mobile" onclick="disable();">Reset</button>
-                       <div id="display">
-                         <a id="winorlose"></a>
-                         <a id="result"></a>
-                         <a id="anydiv"></a>
-                         <a id="matchcount"></a>
-                       </div>
-                       <div id="errordialogue">
-                         <a id="mmrerrormessage"></a>
-                         <a id="eloerrormessage"></a>
-                         <a id="goalerrormessage"></a>
-                       </div>
-	  					   </fieldset>
-  				   </form>
-
-             <form id="custom" onsubmit="return false">
-               <button class="submit button-primary full-width" id="presetbtn" type="button" onclick="preset();customreset();disable();" disabled>Go To Preset</button>
-                 <fieldset>
-                       <div class="form-field">
-                       <input name="mmr1" type="number" id="mmr1" min="1100" max="10000" class="full-width" placeholder="Enter your current MMR" value="" required=true>
-                       </div>
-
-                       <div class="form-field">
-                       <input name="elo1" type="number" id="elo1" min="1" max="500" class="full-width" placeholder="Enter your current ELO per match" value="" required=true>
-                       </div>
-
-                       <div class="form-field">
-                       <input name="goal1" type="number" id="goal1" min="1100" max="10000" class="full-width" placeholder="Enter a custom MMR goal" value="" required=true>
-                       </div>
-
-                      <button type="submit" class="submit button-primary full-width-on-mobile" onclick="enable1();checkmmrfill1();checkelofill1();checkgoalfill1();winorlose1();matchcount1();dontwinorlose1();">Submit</button>
-                      <button type="reset" class="submit button-primary full-width-on-mobile" onclick="disable1();">Reset</button>
-                      <div id="display1">
-                        <a id="winorlose1"></a>
-                        <a id="result1"></a>
-                        <a id="anydiv1"></a>
-                        <a id="matchcount1"></a>
-                      </div>
-                      <div id="errordialogue1">
-                        <a id="mmrerrormessage1"></a>
-                        <a id="eloerrormessage1"></a>
-                        <a id="goalerrormessage1"></a>
-                      </div>
-                 </fieldset>
-             </form>
-             <p id="cycletxt-1" style="text-align: center">Made with ❤️ by: <a href="http://austinleath.com" target="_blank"><u>Austin Leath</u></a></p>
-             <p id="cycletxt-2" style="text-align: center">Add the <a href="https://r6rc.com/discord" target="_blank"><u>R6RC discord bot</u></a> to your server!</p>
-             <p id="cycletxt-3" style="text-align: center">Take a quick poll about the future mobile version of R6RC! <a href="https://strawpoll.com/de7sg86a" target="_blank"><u>strawpoll.com</u></a></p>
-					</div>
-				</article>
-			</div>
-   	</div>
-   </section>
-   <div id="preloader">
-    	<div id="loader"></div>
-   </div>
-   <script src="js/jquery-2.1.3.min.js"></script>
-   <script src="js/plugins.js"></script>
-   <script src="js/main.js"></script>
-   <script src="js/primaryfunctions.js"></script>
-   <script type="text/javascript">
-     var target = $('p[id^="cycletxt-"]').hide(),
-       i = 0;
-     (function cycletxt() {
-       target.eq(i).fadeIn(1500).delay(6500).fadeOut(1500, cycletxt);
-       i = ++i % target.length;
-     })();
-   </script>
-   <!-- Cloudflare Web Analytics -->
-   <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "17ab02b676d743d5b324eab37373848b"}'></script>
-   <!-- End Cloudflare Web Analytics -->
+    <script
+      defer
+      src="https://static.cloudflareinsights.com/beacon.min.js"
+      data-cf-beacon='{"token": "17ab02b676d743d5b324eab37373848b"}'
+    ></script>
   </body>
 </html>
